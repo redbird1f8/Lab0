@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if test -f $1 
+then
+	echo 'Удалить?'
+	read yn	
+	if test $yn = 'y'
+	then
+		rm $1
+		if test $? = 0
+		then
+			echo "Файл удалён"
+		else
+			echo "Файл не удалён"
+		fi
+	else
+			echo "Отмена"
+	fi
+else
+	echo "Это не файл!"
+fi
